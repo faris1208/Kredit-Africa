@@ -50,7 +50,7 @@ export default function PlatformFeatures({
 }: PlatformFeaturesProps) {
   return (
     <section
-      className={`relative w-full min-h-screen py-8 md:py-4 ${className}`}
+      className={`relative w-full  pt-8 md:py-4 ${className}`}
     >
       <Image
         src={imageSrc}

@@ -81,7 +81,7 @@ export default function BuildDevelopers() {
       </motion.div>
 
       {/* Image Section */}
-      <div className="wrapper px-2 sm:px-0">
+      <div className="wrapper sm:px-0">
         <motion.div
           className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] relative"
           initial={{ opacity: 0, scale: 0.98 }}
@@ -100,7 +100,7 @@ export default function BuildDevelopers() {
       </div>
 
       {/* Cards Section */}
-      <div className="wrapper px-2 sm:px-0">
+      <div className="wrapper sm:px-0">
         <motion.div
           className="mt-8 sm:mt-4 lg:mt-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2 lg:gap-1"
           initial="hidden"

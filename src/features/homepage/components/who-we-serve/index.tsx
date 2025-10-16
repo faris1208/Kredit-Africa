@@ -48,11 +48,11 @@ const solutions = [
 export default function WhoWeServe() {
   return (
     <section
-      className={`border border-[transparent] relative w-full min-h-screen py-8 sm:py-12 lg:py-16`}
+      className={` border border-[transparent] relative w-full min-h-screen py-8 sm:py-12 lg:py-16`}
     >
       <div className="relative z-10 wrapper h-full">
         {/* Add your solutions content here */}
-        <div className="pt-[30px] sm:pt-[120px] lg:pt-[150px] pb-8 sm:pb-12 lg:pb-16">
+        <div className="pt-[30px] sm:pt-[120px] lg:pt-[30px] pb-8 sm:pb-12 lg:pb-16">
           <div
             className="flex flex-col items-start justify-between animate-fade-up"
             style={{ animationDelay: "80ms" }}

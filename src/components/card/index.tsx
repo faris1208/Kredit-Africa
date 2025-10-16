@@ -33,7 +33,7 @@ export default function Card({
       <div className="pointer-events-none absolute inset-0 rounded-[12px] ring-1 ring-white/80" />
 
       {/* content */}
-      <div className="relative z-10 py-4 px-3 sm:py-6 sm:px-4 md:py-8 md:px-6 lg:py-10 lg:px-6">
+      <div className="relative z-10 py-6 px-4 sm:py-6 sm:px-4 md:py-8 md:px-6 lg:py-10 lg:px-6">
         <h3
           className={`${textColor} font-space font-medium text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] leading-tight`}
         >

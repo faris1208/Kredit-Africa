@@ -33,7 +33,7 @@ export default function NewCard({
       <div className="pointer-events-none absolute inset-0 rounded-[12px] ring-1 ring-white/80" />
 
       {/* content */}
-      <div className="relative z-10 py-3 px-3 sm:py-4 sm:px-4 md:py-6 md:px-6 lg:py-8 lg:px-6">
+      <div className="relative z-10 py-6 px-4 sm:py-4 sm:px-4 md:py-6 md:px-6 lg:py-8 lg:px-6">
         <p
           className={`${textColor} font-space font-medium text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-tight`}
         >

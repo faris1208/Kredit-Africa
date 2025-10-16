@@ -12,7 +12,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
-            <div className="cursor-pointer w-[62px] h-[62px] bg-[#1A1A1A] rounded-lg flex items-center justify-center mr-3">
+            <div className="cursor-pointer w-[42px] h-[42px] bg-[#1A1A1A] rounded-lg flex items-center justify-center mr-3 lg:w-[62px] lg:h-[62px]">
               <svg
                 width="31"
                 height="36"
@@ -99,9 +99,21 @@ export default function Navbar() {
           className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/20"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="block w-6 h-[2px] bg-black" />
-          <span className="block w-6 h-[2px] bg-black mt-1.5" />
-          <span className="block w-6 h-[2px] bg-black mt-1.5" />
+          <svg
+            width="18"
+            height="14"
+            viewBox="0 0 18 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 1H17M1 7H17H4M1 13H11"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
       </div>
 

@@ -64,8 +64,15 @@
 }
 
 .wrapper {
-  width: 96%;
+  width: 90%;
+  max-width: 1440px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+  .wrapper {
+    width: 96%;
+  }
 }
 
 /* utility class for IBM Plex Mono */
@@ -74,7 +81,7 @@
 }
 
 .font-space {
-  font-family: "Spaceregular", monospace;
+  font-family: "SpaceRegular", monospace;
 }
 
 .font-inter {
