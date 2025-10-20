@@ -63,6 +63,10 @@
   border: 1px solid red;
 }
 
+.no_scroll{
+  scrollbar-width: none;
+}
+
 .wrapper {
   width: 90%;
   max-width: 1440px;

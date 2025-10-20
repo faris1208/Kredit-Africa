@@ -185,7 +185,7 @@ export default function HeroSection() {
             </motion.div>
             {/* Stats row */}
             <motion.div
-              className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-4xl overflow-x-auto sm:overflow-visible -mx-4 px-4 snap-x snap-mandatory"
+              className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-4xl no_scroll overflow-x-auto sm:overflow-visible -mx-4 px-4 snap-x snap-mandatory"
               variants={statRowVariants}
             >
               <div className="flex flex-row items-center gap-4 sm:gap-4 lg:gap-8 text-[#000] whitespace-nowrap sm:whitespace-normal sm:justify-between">
