@@ -102,12 +102,12 @@ export default function HeroSection() {
               </Link>
             </motion.div>
             {/* Stats row */}
-            <div className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-4xl">
-              <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 lg:gap-8 text-[#000]">
+            <div className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-4xl overflow-x-auto sm:overflow-visible -mx-4 px-4 snap-x snap-mandatory">
+              <div className="flex flex-row items-center gap-4 sm:gap-4 lg:gap-8 text-[#000] whitespace-nowrap sm:whitespace-normal sm:justify-between">
                 {features.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="flex items-center gap-2 sm:gap-3 lg:gap-4"
+                    className="flex items-center gap-2 sm:gap-3 lg:gap-4 flex-shrink-0 snap-start"
                     variants={{
                       hidden: { opacity: 0, y: 16 },
                       show: { opacity: 1, y: 0 },
