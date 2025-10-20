@@ -156,30 +156,43 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-          <a href="#" className="text-black font-inter text-[16px]">
+          <a
+            href="#"
+            className="text-black font-inter text-[16px]"
+            onClick={() => setOpen(false)}
+          >
             Company
           </a>
-          <a href="#" className="text-black font-inter text-[16px]">
+          <a
+            href="#"
+            className="text-black font-inter text-[16px]"
+            onClick={() => setOpen(false)}
+          >
             Solutions
           </a>
-          <Link href="/docs" className="text-black font-inter text-[16px]">
+          <Link
+            href="/docs"
+            className="text-black font-inter text-[16px]"
+            onClick={() => setOpen(false)}
+          >
             API Docs
           </Link>
           <Link
             href="/book-session"
             className="text-black font-inter text-[16px]"
+            onClick={() => setOpen(false)}
           >
             Book a Demo
           </Link>
           <div className="mt-4 flex flex-col gap-3">
-            <Link href="/sign-in">
+            <Link href="/sign-in" onClick={() => setOpen(false)}>
               <BaseButton
                 label="Sign In"
                 backgroundColor="#F5F5F5"
                 textColor="#000"
               />
             </Link>
-            <Link href="/sign-up">
+            <Link href="/sign-up" onClick={() => setOpen(false)}>
               <BaseButton
                 label="Get Started"
                 backgroundColor="#333"
