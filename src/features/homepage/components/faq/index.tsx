@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import SubTittle from "@/components/sub-tiltle";
 import BaseButton from "@/components/BaseButton";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const faqData = [
   {
@@ -50,40 +51,126 @@ export default function Faq() {
       <div className="wrapper">
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-16">
           {/* Left Column */}
-          <div
-            className="w-full lg:w-[40%] animate-fade-up"
-            style={{ animationDelay: "80ms" }}
+          <motion.div
+            className="w-full lg:w-[40%]"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            variants={{
+              hidden: { opacity: 0, y: -20 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  when: "beforeChildren",
+                  staggerChildren: 0.15,
+                  delayChildren: 0.1,
+                  type: "tween",
+                  ease: [0.16, 1, 0.3, 1],
+                  duration: 0.9,
+                },
+              },
+            }}
           >
-            <SubTittle label="FAQS" />
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: -12 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 140,
+                    damping: 28,
+                    duration: 0.8,
+                  },
+                },
+              }}
+            >
+              <SubTittle label="FAQS" />
+            </motion.div>
             <div className="flex flex-col">
-              <h2
-                className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[60px] leading-[1.1] sm:leading-[1.0] font-space font-medium text-[#000] mt-4 mb-6 sm:mb-8 animate-fade-up"
-                style={{ animationDelay: "160ms" }}
+              <motion.h2
+                className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[60px] leading-[1.1] sm:leading-[1.0] font-space font-medium text-[#000] mt-4 mb-6 sm:mb-8"
+                variants={{
+                  hidden: { opacity: 0, y: -16 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 140,
+                      damping: 28,
+                      duration: 0.8,
+                    },
+                  },
+                }}
               >
                 Your questions, answered
-              </h2>
-              <Link
-                href="/contact"
-                className="self-start animate-fade-up"
-                style={{ animationDelay: "240ms" }}
+              </motion.h2>
+              <motion.div
+                className="self-start"
+                variants={{
+                  hidden: { opacity: 0, y: -16 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 140,
+                      damping: 28,
+                      duration: 0.8,
+                    },
+                  },
+                }}
               >
-                <BaseButton
-                  label="Contact sales"
-                  backgroundColor="#000"
-                  textColor="#fff"
-                />
-              </Link>
+                <Link href="/contact">
+                  <BaseButton
+                    label="Contact sales"
+                    backgroundColor="#000"
+                    textColor="#fff"
+                  />
+                </Link>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - FAQ List */}
-          <div className="w-full lg:w-[60%]">
+          <motion.div
+            className="w-full lg:w-[60%]"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 1 },
+              show: {
+                opacity: 1,
+                transition: {
+                  when: "beforeChildren",
+                  staggerChildren: 0.12,
+                  delay: 0.3,
+                },
+              },
+            }}
+          >
             <div className="space-y-2 sm:space-y-3">
-              {faqData.map((faq, idx) => (
-                <div
+              {faqData.map((faq) => (
+                <motion.div
                   key={faq.id}
-                  className="animate-fade-up"
-                  style={{ animationDelay: `${120 + idx * 90}ms` }}
+                  variants={{
+                    hidden: { opacity: 0, y: -18, scale: 0.99 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: {
+                        type: "spring",
+                        stiffness: 130,
+                        damping: 26,
+                        duration: 0.9,
+                      },
+                    },
+                  }}
                 >
                   <div
                     className={`cursor-pointer transition-all duration-200 ${
@@ -99,15 +186,20 @@ export default function Faq() {
                       {faq.question}
                     </h3>
                     {activeFaq === faq.id && (
-                      <p className="text-gray-600 font-inter text-[14px] sm:text-[16px] leading-relaxed animate-fade-in">
+                      <motion.p
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="text-gray-600 font-inter text-[14px] sm:text-[16px] leading-relaxed"
+                      >
                         {faq.answer}
-                      </p>
+                      </motion.p>
                     )}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

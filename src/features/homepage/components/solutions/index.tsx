@@ -78,13 +78,20 @@ export default function Solutions({
           className="pt-[50px] sm:pt-[300px] lg:pt-[450px] pb-8 sm:pb-12 lg:pb-16"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={{
-            hidden: { opacity: 0, y: 24 },
+            hidden: { opacity: 0, y: -20 },
             show: {
               opacity: 1,
               y: 0,
-              transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+              transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.15,
+                delayChildren: 0.12,
+                type: "tween",
+                ease: [0.16, 1, 0.3, 1],
+                duration: 0.9,
+              },
             },
           }}
         >
@@ -92,8 +99,17 @@ export default function Solutions({
             <motion.div
               className="w-full lg:w-auto"
               variants={{
-                hidden: { opacity: 0, y: 16 },
-                show: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: -16 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 140,
+                    damping: 28,
+                    duration: 0.8,
+                  },
+                },
               }}
             >
               <SubTittle label="Solutions" />
@@ -101,8 +117,17 @@ export default function Solutions({
             <motion.div
               className="w-full lg:w-[72%]"
               variants={{
-                hidden: { opacity: 0, y: 16 },
-                show: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: -16 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 140,
+                    damping: 28,
+                    duration: 0.8,
+                  },
+                },
               }}
             >
               <h2 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[60px] leading-[1.1] sm:leading-[1.0] font-space font-medium text-[#000]">
@@ -122,10 +147,17 @@ export default function Solutions({
           className="mt-0 sm:mt-12 lg:mt-[80px] py-2 sm:py-4 lg:py-6"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: false, amount: 0.15 }}
           variants={{
             hidden: { opacity: 1 },
-            show: { opacity: 1, transition: { staggerChildren: 0.07 } },
+            show: {
+              opacity: 1,
+              transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.12,
+                delay: 0.6,
+              },
+            },
           }}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-1 sm:gap-6 lg:gap-1">
@@ -133,9 +165,21 @@ export default function Solutions({
               <motion.div
                 key={idx}
                 variants={{
-                  hidden: { opacity: 0, y: 24, scale: 0.98 },
-                  show: { opacity: 1, y: 0, scale: 1 },
+                  hidden: { opacity: 0, y: -24, scale: 1.04 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      type: "spring",
+                      stiffness: 120,
+                      damping: 26,
+                      duration: 0.9,
+                    },
+                  },
                 }}
+                // whileHover={{ y: -3, scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Card {...item} />
               </motion.div>

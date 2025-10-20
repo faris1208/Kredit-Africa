@@ -67,29 +67,43 @@ export default function Compliance() {
   const activeItem = complianceItems.find((item) => item.id === activeTab);
 
   return (
-    <section
-      className={`relative w-full min-h-screen py-4 sm:py-12 lg:py-16`}
-    >
+    <section className={`relative w-full min-h-screen py-4 sm:py-12 lg:py-16`}>
       <div className="relative z-10 wrapper h-full">
         <motion.div
           className="pt-[30px] sm:pt-[120px] lg:pt-[150px] pb-8 sm:pb-12 lg:pb-16"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={{
-            hidden: { opacity: 0, y: 24 },
+            hidden: { opacity: 0, y: -20 },
             show: {
               opacity: 1,
               y: 0,
-              transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+              transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.15,
+                delayChildren: 0.1,
+                type: "tween",
+                ease: [0.16, 1, 0.3, 1],
+                duration: 0.9,
+              },
             },
           }}
         >
           <div className="flex flex-col items-start justify-between">
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 12 },
-                show: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: -12 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 140,
+                    damping: 28,
+                    duration: 0.8,
+                  },
+                },
               }}
             >
               <SubTittle label="Compliance & Trust at Our Core" />
@@ -98,8 +112,17 @@ export default function Compliance() {
               <motion.h2
                 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[60px] w-full lg:w-[60%] leading-[1.1] sm:leading-[1.0] font-space font-medium text-[#000]"
                 variants={{
-                  hidden: { opacity: 0, y: 16 },
-                  show: { opacity: 1, y: 0 },
+                  hidden: { opacity: 0, y: -16 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 140,
+                      damping: 28,
+                      duration: 0.8,
+                    },
+                  },
                 }}
               >
                 We build our infrastructure with security, transparency, and
@@ -108,8 +131,17 @@ export default function Compliance() {
               <motion.p
                 className="text-[14px] sm:text-[16px] lg:text-[18px] w-full lg:w-[30%] font-inter font-medium text-[#000]"
                 variants={{
-                  hidden: { opacity: 0, y: 16 },
-                  show: { opacity: 1, y: 0 },
+                  hidden: { opacity: 0, y: -16 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 140,
+                      damping: 28,
+                      duration: 0.8,
+                    },
+                  },
                 }}
               >
                 Kredit Africa empowers financial institutions with reliable data
@@ -124,10 +156,17 @@ export default function Compliance() {
           className=" mt-8 sm:mt-12 lg:mt-16"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: false, amount: 0.15 }}
           variants={{
             hidden: { opacity: 1 },
-            show: { opacity: 1, transition: { staggerChildren: 0.07 } },
+            show: {
+              opacity: 1,
+              transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.12,
+                delay: 0.4,
+              },
+            },
           }}
         >
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-1">
@@ -136,7 +175,7 @@ export default function Compliance() {
               className="w-full lg:w-[25%] space-y-2"
               variants={{
                 hidden: { opacity: 1 },
-                show: { opacity: 1, transition: { staggerChildren: 0.05 } },
+                show: { opacity: 1, transition: { staggerChildren: 0.08 } },
               }}
             >
               {complianceItems.map((item) => (
@@ -149,8 +188,17 @@ export default function Compliance() {
                       : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                   }`}
                   variants={{
-                    hidden: { opacity: 0, y: 12 },
-                    show: { opacity: 1, y: 0 },
+                    hidden: { opacity: 0, y: -12 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        type: "spring",
+                        stiffness: 160,
+                        damping: 26,
+                        duration: 0.8,
+                      },
+                    },
                   }}
                 >
                   <div className="mt-2 sm:mt-3 flex flex-col justify-between">

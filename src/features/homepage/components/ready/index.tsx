@@ -12,18 +12,38 @@ export default function Ready() {
           className="flex flex-col items-center text-center"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: false, amount: 0.25 }}
           variants={{
-            hidden: { opacity: 0, y: 24 },
-            show: { opacity: 1, y: 0, transition: { staggerChildren: 0.08 } },
+            hidden: { opacity: 0, y: -20 },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.15,
+                delayChildren: 0.1,
+                type: "tween",
+                ease: [0.16, 1, 0.3, 1],
+                duration: 0.9,
+              },
+            },
           }}
         >
           {/* Main Heading */}
           <motion.h2
             className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] leading-tight sm:leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[65px] font-space font-medium text-[#000] mb-8 sm:mb-6 max-w-[320px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[900px]"
             variants={{
-              hidden: { opacity: 0, y: 16 },
-              show: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: -16 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 140,
+                  damping: 28,
+                  duration: 0.8,
+                },
+              },
             }}
           >
             Ready to take the next step with your finance
@@ -35,8 +55,17 @@ export default function Ready() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               variants={{
-                hidden: { opacity: 0, y: 16 },
-                show: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: -16 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 140,
+                    damping: 28,
+                    duration: 0.8,
+                  },
+                },
               }}
             >
               <Link
@@ -56,8 +85,17 @@ export default function Ready() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               variants={{
-                hidden: { opacity: 0, y: 16 },
-                show: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: -16 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 140,
+                    damping: 28,
+                    duration: 0.8,
+                  },
+                },
               }}
             >
               <Link href="/contact" className="inline-block w-full sm:w-auto">
